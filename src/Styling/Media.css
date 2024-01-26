@@ -1,0 +1,48 @@
+@keyframes shake{
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.social-media-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.social-media-icons a {
+  display: flex;
+  margin: 10px 5px;
+  text-decoration: none;
+  color: white;
+  width: 5vw;
+  height: 5vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.shake {
+  animation: ease-in-out shake .25s;
+}
+
+
+.social-media-icons a:hover {
+  transition: 1s;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.social-media-icons svg {
+  font-size: 3vw;
+}

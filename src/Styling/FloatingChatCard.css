@@ -1,0 +1,97 @@
+.chat-card {
+    position: fixed;
+    bottom: -10px;
+    right: 20px;
+    width: 20%;
+    border-radius: 10px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; 
+    border: solid white 1px;
+}
+
+.collapsed {
+    height: 50px;
+}
+
+.expanded {
+    background-color: rgba(16, 16, 16, 0.828);
+    height: 400px;
+    cursor: default;
+    border: none;
+}
+
+.chat-card form {
+    display: none;
+}
+
+.expanded form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.chat-card input[type="text"],
+.chat-card input[type="email"],
+.chat-card textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100%);
+}
+
+.chat-card button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.chat-card button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .chat-card {
+        width: 20vw; /* Larger width for smaller screens */
+        right: 10px; /* Adjust positioning */
+        bottom: 10px;
+    }
+    .expanded {
+        background-color: rgba(16, 16, 16, 0.828);
+        height: 400px;
+        width: 90vw;
+        cursor: default;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .chat-card {
+        width: 20vw; /* Larger width for smaller screens */
+        bottom: 5px;
+    }
+
+    .expanded {
+        background-color: rgba(16, 16, 16, 0.828);
+        border: none;
+        height: 400px;
+        width: 95vw;
+        cursor: default;
+        border-radius: 0;
+    }
+
+    .collapsed {
+        border-radius: 0;
+        height: 25px;
+    }
+}
